@@ -1,0 +1,7 @@
+nessa ordem:
+source venv/bin/activate
+cd flask
+python webservice.py
+mongod
+
+Have Fun.

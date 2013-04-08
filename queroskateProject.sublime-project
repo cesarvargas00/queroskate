@@ -1,0 +1,19 @@
+{
+	"folders":
+	[
+		{
+			"path": "flask"
+		},
+		{
+			"path": "venvs"
+		}
+	],
+	"build_systems":
+    [
+        {
+            "name": "Python-VENV-RETINA",
+            "cmd": ["source","venvs/venv-retina/bin/activate"],
+            "cmd": ["python", "$file"]
+        }
+    ]
+}
