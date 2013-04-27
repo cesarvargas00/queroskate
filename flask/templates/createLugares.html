@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyATs9LlQ7AWita-Z6ruwzDTlWTypiynOFA&amp;sensor=false">
+    </script>
+    <script type="text/javascript" src="static/js/gmaps.js"></script>
+    
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+
+    <link rel="stylesheet" href="static/css/bootstrap.min.css">
+    <style>
+    body {
+        padding-top: 60px;
+        padding-bottom: 40px;
+    }
+    #map img {
+    max-width: none;
+    }
+    </style>
+    <link rel="stylesheet" href="static/css/bootstrap-responsive.min.css">
+    <script src="static/js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+</head>
+<body>
+<!--[if lt IE 7]>
+<p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+<![endif]-->
+
+<!-- This code is taken from http://twitter.github.com/bootstrap/examples/hero.html -->
+
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </a>
+            <div class="nav-collapse collapse">
+                <ul class="nav">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Usuários <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#.html"><i class="icon-plus-sign"></i> Criar</a></li>
+                            <li><a href="#"><i class="icon-trash"></i> Remover</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Lugares <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="createLugares.html"><i class="icon-plus-sign"></i> Criar</a></li>
+                            <li><a href="#"><i class="icon-pencil"></i> Editar</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <form class="navbar-form pull-right">
+                    <input class="span2" type="text" placeholder="email">
+                    <input class="span2" type="password" placeholder="password">
+                    <button type="submit" class="btn">sign in</button>
+                </form>
+            </div><!--/.nav-collapse -->
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="page-header">
+        <h1>Criar lugar <small>Make it awesome, bro!</small></h1>
+    </div>
+    <form action="insert" method="post">
+        {{form.hidden_tag()}}
+
+            <label>Nome</label>
+            {{form.name()}}
+
+            <label>Descrição</label>
+            {{form.description(class='span5',rows=4)}}
+
+            <label>Qual nota daria para esse lugar?</label>
+            {{form.selectRank(class='span4')}}
+
+            <label>E como é o chão?</label>
+            {{form.selectFloor(class='span4')}}
+
+            <label>E a galera?</label>
+            {{form.selectGalera(class='span4')}}
+
+            <label>O que tem nesse lugar?</label>
+            <div>
+                <label class="checkbox inline">
+                    {{form.boolCoberto()}}                
+                    Proteção da chuva
+                </label>
+                <label class="checkbox inline">
+                    {{form.corrimao()}}                
+                    Corrimão
+                </label>
+                <label class="checkbox inline">
+                    {{form.borda()}}
+                    Borda
+                </label>
+                <label class="checkbox inline">
+                    {{form.mini()}}
+                    Mini-Ramp
+                </label>
+                <label class="checkbox inline">
+                    {{form.bowl()}}
+                    Bowl
+                </label>
+                <label class="checkbox inline">
+                    {{form.manual()}}
+                    Manual Pad
+                </label>
+            </div>
+            <br>
+            <label>Adicione uma imagem</label>
+            <img data-src="holder.js/360x240" alt="">
+        <hr>
+        <div class="page-header">
+            <h2>Coordenadas <small>Show me where it is, dude!</small></h2>
+        </div>
+        <div id="map"></div>
+        <label>Latitude & Longitude</label>
+        <div class="controls controls-row">
+            {{form.lat(class="input-medium uneditable-input")}}
+            {{form.lng(class="input-medium uneditable-input")}}
+        </div>
+        <hr>
+        <button type="submit" class="btn btn-primary">Criar</button>
+    </form>
+    <footer>
+        <p class='text-center'>&copy; QueroSkate.com 2013</p>
+    </footer>
+
+</div> <!-- /container -->
+
+
+<script>window.jQuery || document.write('<script src="static/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+
+<script src="static/js/vendor/bootstrap.min.js"></script>
+
+<script src="static/js/main.js"></script>
+
+<!--<script>
+var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+    g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+    s.parentNode.insertBefore(g,s)}(document,'script'));
+</script>
+ -->
+<script src="static/js/holder.js"></script>
+<script>
+$(document).ready(function() {
+    map = new GMaps({
+            div: '#map',
+            lat: -23.551064349833187,
+            lng: -46.636962890625,
+            click: function(e) {
+                var lat = e.latLng.lat();
+                var lng = e.latLng.lng();
+                $('#lat').val(lat);
+                $('#lng').val(lng);
+                map.removeMarkers();
+                map.addMarker({
+                  lat: lat,
+                  lng: lng,
+                  icon: 'static/img/skateicon.png'
+                });
+        }
+    });
+    $(window).resize(function () {
+        var h = $(window).height(),
+        offsetTop = 60; // Calculate the top offset
+        $('#map').css('height', (h - offsetTop));
+    }).resize();
+});   
+</script>
+</body>
+</html>

@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"f",
+				"form"
+			],
+			[
 				"padding",
 				"padding-left:   (property)"
 			],
@@ -83,9 +87,33 @@
 	"build_system": "Python",
 	"command_palette":
 	{
-		"height": 72.0,
+		"height": 138.0,
 		"selected_items":
 		[
+			[
+				"jli",
+				"JSLint: Run JSLint"
+			],
+			[
+				"spac",
+				"Indentation: Convert to Spaces"
+			],
+			[
+				"lorem",
+				"Snippet: Lorem ipsum"
+			],
+			[
+				"ind",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"close",
+				"Project: Close"
+			],
+			[
+				"space",
+				"Indentation: Convert to Spaces"
+			],
 			[
 				"close ",
 				"Project: Close"
@@ -93,10 +121,6 @@
 			[
 				"proje",
 				"Project: Save As"
-			],
-			[
-				"close",
-				"Project: Close"
 			],
 			[
 				"bui",
@@ -191,7 +215,7 @@
 				"Snippet: Typedef"
 			]
 		],
-		"width": 377.0
+		"width": 553.0
 	},
 	"console":
 	{
@@ -208,6 +232,16 @@
 	},
 	"file_history":
 	[
+		"/Users/cesarvargas00/Desktop/bootstrap admin/createLugares.html",
+		"/Users/cesarvargas00/Desktop/queroskate/flask/models/marker.py",
+		"/Users/cesarvargas00/Desktop/queroskate/flask/databases/mongodb_config.py",
+		"/Users/cesarvargas00/Desktop/queroskate/flask/webservice.py",
+		"/Users/cesarvargas00/Desktop/test.txt",
+		"/Users/cesarvargas00/Desktop/test.html",
+		"/Users/cesarvargas00/Desktop/queroskate/Procfile",
+		"/Users/cesarvargas00/Desktop/queroskate/.gitignore",
+		"/Users/cesarvargas00/Desktop/donut.c",
+		"/Users/cesarvargas00/Desktop/queroskate/flask/static/js/javascript.js",
 		"/Users/cesarvargas00/Desktop/backend/queroskateProject.sublime-project",
 		"/Users/cesarvargas00/Desktop/backend/requirements.txt",
 		"/Users/cesarvargas00/Desktop/backend/flask/databases/mongodb_config.py",
@@ -228,7 +262,6 @@
 		"/Users/cesarvargas00/Desktop/boiling-tor-7162/blog/urls.py",
 		"/Users/cesarvargas00/Dropbox/brasil/Plano C/backend/requirements.txt",
 		"/Users/cesarvargas00/Desktop/queroskate/flask/models.py",
-		"/Users/cesarvargas00/Desktop/queroskate/flask/webservice.py",
 		"/Users/cesarvargas00/Desktop/queroskate/webservice/webservice.py",
 		"/Users/cesarvargas00/Desktop/queroskate/flask/redis_config.py",
 		"/Users/cesarvargas00/Desktop/jsTest.html",
@@ -275,7 +308,6 @@
 		"/Users/cesarvargas00/Desktop/jsGameOfLife/untitled.sublime-workspace",
 		"/Users/cesarvargas00/Desktop/jsGameOfLife/README.md",
 		"/Users/cesarvargas00/Library/Application Support/Sublime Text 2/Packages/User/Preferences.sublime-settings",
-		"/Users/cesarvargas00/Desktop/test.html",
 		"/Users/cesarvargas00/Library/Application Support/Sublime Text 2/Packages/Default/Preferences.sublime-settings",
 		"/Users/cesarvargas00/Library/Application Support/Sublime Text 2/Packages/Default/Default (OSX).sublime-keymap"
 	],
@@ -297,6 +329,10 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"markers",
+			"marker",
+			"users",
+			"markers",
 			"firstName",
 			"Marker",
 			"models",
@@ -386,6 +422,10 @@
 	{
 		"height": 138.0
 	},
+	"output.jslint_result_view":
+	{
+		"height": 110.0
+	},
 	"output.sftp":
 	{
 		"height": 0.0
@@ -426,7 +466,7 @@
 	"show_minimap": false,
 	"show_open_files": true,
 	"show_tabs": true,
-	"side_bar_visible": true,
+	"side_bar_visible": false,
 	"side_bar_width": 221.0,
 	"status_bar_visible": true
 }

@@ -1,8 +1,9 @@
-function createMarkersOn(map){
-    var markers = new Array();
-    $.getJSON("http://127.0.0.1:5000/rest/json/all",function(data){
+function createMarkersOn(map) {
+    'use strict';
+    var markers = [];
+    $.getJSON("http://127.0.0.1:5000/rest/json/all/markers", function(data) {
         var obj = data;
-        for(var i = 0;i < obj.length; i++){
+        for (var i = 0;i < obj.length; i++){
                 var marker = new google.maps.Marker({
                 position: new google.maps.LatLng(obj[i]['lat'],obj[i]['lng']),
                 map: map,
