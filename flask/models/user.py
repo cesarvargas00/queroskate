@@ -25,5 +25,5 @@ class User:
 		self.firstName = param['firstName']
 		self.lastName = param['lastName']
 		self.isAdmin = param['isAdmin']
-		self.avatar = param['avatar']
-		self.born = param['born'].__str__()
+		#self.avatar = param['avatar']
+		#self.born = param['born'].__str__()

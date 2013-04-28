@@ -28,7 +28,9 @@ def createUpdateUser(db, user):
     else:
         raise TypeError('The arguments must be of types pymongo.database.Database and models.Marker')
     try:
-        return users.save(user.__dict__) # returns the id of the added marker
+        return users.update({'username':user.username},
+            {'$set':user.__dict__},
+            upsert=True) # returns the id of the added marker
     except DuplicateKeyError:
         return -1
 
