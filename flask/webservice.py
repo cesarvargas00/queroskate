@@ -1,7 +1,9 @@
+import md5
 from flask import Flask, Response, request,  render_template, redirect
 import databases.mongodb_config as mongodb
-import models.marker as model
-from forms import InsertForm
+from models.marker import Marker
+from models.user import User
+from forms import InsertMarkerForm, InsertUserForm
 app = Flask(__name__)
 app.config.from_object('config')
 
@@ -21,21 +23,21 @@ def allMarkers():
 @app.route('/rest/json/all/users')
 def allUsers():
     try:
-        db = moongodb.getDatabase()
+        db = mongodb.getDatabase()
         return Response(mongodb.getAllRecordsFrom(db, 'users', asJSON=True), mimetype="application/json")
     except Exception, e:
-        return 'error'
+        return e
 
 @app.route('/')
 def root():
     return render_template('index.html')
 
-@app.route('/insert', methods=['GET','POST'])
-def insert():
-    form = InsertForm()
+@app.route('/insertMarker', methods=['GET','POST'])
+def insertMarker():
+    form = InsertMarkerForm()
     if form.validate_on_submit():
-      marker = model.Marker({
-           'name':form.name.data,                                                            
+      marker = Marker({
+           'name':form.name.data,
            'description':form.description.data,
            'lat':form.lat.data,
            'lng':form.lng.data,
@@ -56,6 +58,25 @@ def insert():
       mongodb.createUpdateMarker(db,marker)
       return redirect('/')
     return render_template('createLugares.html',form = form)
+
+@app.route('/insertUser', methods=['GET','POST'])
+def insertUser():
+    form = InsertUserForm()
+    if form.validate_on_submit():
+      m = md5.new()
+      m.update(form.password.data)
+      password = m.hexdigest()
+      user = User({
+           'firstName':form.firstName.data,
+           'lastName':form.lastName.data,
+           'username':form.username.data,
+           'password':password,
+           'isAdmin':form.isAdmin.data
+            })
+      db = mongodb.getDatabase()
+      mongodb.createUpdateUser(db,user)
+      return redirect('/')
+    return render_template('createUsers.html',form = form)
 
 if __name__ == '__main__':
     app.debug = True

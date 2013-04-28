@@ -1,7 +1,7 @@
-from flask.ext.wtf import Form, TextField, BooleanField, TextAreaField, SelectField, FloatField
+from flask.ext.wtf import Form, TextField, BooleanField, TextAreaField, SelectField, FloatField, PasswordField
 from flask.ext.wtf import Required
 
-class InsertForm(Form):
+class InsertMarkerForm(Form):
     name = TextField('name', validators = [Required()])
     description = TextAreaField('description', validators = [Required()])
     selectRank = SelectField(u'rank', choices=[('1', '1'), ('2', '2'), ('3', '3'), ('4', '4'), ('5', '5')])
@@ -15,3 +15,11 @@ class InsertForm(Form):
     manual = BooleanField('manual', default = False)
     lat = FloatField('lat', validators = [Required()])
     lng = FloatField('lng', validators = [Required()])
+
+class InsertUserForm(Form):
+    firstName = TextField('firstName', validators = [Required()])
+    lastName = TextField('lastName', validators = [Required()])
+    username = TextField('username', validators = [Required()])
+    password = PasswordField('password', validators = [Required()])
+    isAdmin = BooleanField('isAdmin', default = False)
+    #avatar = FileField(u'Image File', [validators.regexp(u'^[^/\\]\.jpg$')])
