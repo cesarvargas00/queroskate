@@ -70,19 +70,4 @@ def deleteMarkerFrom(db, all=False, x=None):
 def getMarkersWithin(db, boundaries):
     '''http://api.mongodb.org/python/1.7/examples/geo.html'''
     pass
-
-"""
-from databases.mongodb_config import getDatabase, getAllMarkersFrom, createUpdateMarker
-from models.marker import Marker
-marker = Marker({
-    'name'      :    'X',
-    'lat'       :    -25.551635,
-    'lng'       :    -46.2376252,
-    'photo'     :    'http://3.bp.blogspot.com/-nmnXr2OhjNs/Tr61VPICMQI/AAAAAAAAAME/x0TGecXDWj0/s1600/Pista-do-Sumar%25C3%25A9-divulga%25C3%25A7%25C3%25A3o.jpg',
-    'obstacles' :    'obstacles',
-    'security'  :    'security',
-    'endereco'  :    'Av. Dr. Arnaldo, 1300 - Perdizes São Paulo'
-    })
-db = getDatabase()
-createUpdateMarker(db,marker)
-"""
+    
